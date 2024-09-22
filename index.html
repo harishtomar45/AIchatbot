@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chat Boat</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+
+<style>
+    .box::before {
+        content: '';
+        position: absolute;
+        top: -220px;
+        left: -80px;
+        width: 1000px;
+        height: 700px;
+        background: radial-gradient(var(--clr), transparent, transparent);
+
+    }
+
+    .box2::before {
+        content: '';
+        position: absolute;
+        top: -250px;
+        right: -30px;
+        width: 800px;
+        height: 600px;
+        background: radial-gradient(var(--clr), transparent, transparent);
+        z-index: 1;
+    }
+
+    .box3::before {
+        content: '';
+        position: absolute;
+        /* bottom: 0px; */
+        right: -30px;
+        width: 800px;
+        height: 600px;
+        background: radial-gradient(var(--clr), transparent, transparent);
+        z-index: -1;
+    }
+
+    .box-bottom::before {
+        content: '';
+        position: absolute;
+        top: 10px;
+        /* right: 0px; */
+        width: 500px;
+        height: 300px;
+        background: radial-gradient(var(--clr), transparent, transparent);
+        z-index: 1;
+    }
+
+
+    .text-box::before {
+        content: '';
+        position: absolute;
+        top: -30px;
+        left: -300px;
+        width: 900px;
+        height: 700px;
+        background: radial-gradient(var(--clr), transparent, transparent);
+        z-index: -1;
+    }
+
+    .boxes::before {
+        content: '';
+        position: absolute;
+        top: 0px;
+        /* left: 0px; */
+        width: 500px;
+        height: 300px;
+        background: radial-gradient(var(--clr), transparent, transparent);
+        z-index: 1;
+    }
+
+    /* border animation */
+
+    .box-color::before {
+        content: '';
+        position: absolute;
+        /* top: 0px; */
+        /* left: 0px; */
+        width: 30%;
+        height: 295%;
+        background: radial-gradient(#a600ff, #f900dc, transparent);
+        /* border-radius: 0px; */
+        animation: rotate 5s linear infinite;
+        z-index: -1;
+        overflow: hidden;
+    }
+
+    .box-color::after{
+        content: '';
+        position: absolute;
+        /* background: #081340; */
+        inset: 4px;
+        border-radius:9px;
+        /* z-index: 1; */
+    }
+
+    @keyframes rotate {
+        from{
+            transform: rotate(0deg);
+        }
+        to{
+            transform: rotate(360deg);
+        }
+        
+    }
+
+    @media (max-width: 520px) {
+        .box::before {
+            content: '';
+            position: absolute;
+            top: -180px;
+            /* left: 0px; */
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(var(--clr), transparent, transparent);
+
+        }
+
+        .box2::before {
+        content: '';
+        position: absolute;
+        /* bottom: -300px; */
+        left: 0px;
+        width: 300px;
+        height: 100px;
+        background: radial-gradient(var(--clr), transparent, transparent);
+        z-index: -1;
+    }
+
+        .box-bottom::before {
+            content: '';
+            position: absolute;
+            top: 0px;
+            /* right: 0px; */
+            width: 250px;
+            height: 100px;
+            background: radial-gradient(var(--clr), transparent, transparent);
+            z-index: 1;
+        }
+
+
+        .text-box::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: 0px;
+            width: 300px;
+            height: 100px;
+            background: radial-gradient(var(--clr), transparent, transparent);
+            z-index: 1;
+        }
+
+        .boxes::before {
+            content: '';
+            position: absolute;
+            top: 0px;
+            /* left: 0px; */
+            width: 100px;
+            height: 50px;
+            background: radial-gradient(var(--clr), transparent, transparent);
+            z-index: 1;
+        }
+    }
+</style>
+
+<body class="bg-black w-full">
+
+
+    <!-- First Section Start -->
+
+    <div class=" relative w-full">
+        <div class="box mx-auto max-w-7xl lg:px-8 " style="--clr:rgba(249, 6, 200, 0.3);--i:1;">
+            <div class="flex flex-col justify-center px-4 py-10 lg:px-6">
+                <!-- Navbar start -->
+                <div class="inline-flex items-center">
+                   
+                    <img class="h-[50px]" src="/src/assets/Artboard 4.png" alt="logo">
+                    <!-- <span class="ml-4 text-2xl font-bold text-white">AI Chat</span> -->
+                </div>
+                <!-- Navbar end -->
+
+                <div class="text-center mt-10">
+                    <h1 class="text-3xl tracking-tight text-white lg:text-6xl">
+                        Lorem ipsum dolor sit <br /> amet consectetur dicta.
+                    </h1>
+                    <p class="mt-6 text-lg leading-8 text-white">
+                        Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem
+                        cupidatat commodo. <br /> Elit sunt amet fugiat veniam occaecat fugiat
+                        aliqua.
+                    </p>
+                    <div class="mt-10 flex items-center justify-center gap-x-2 ">
+                        <button type="button"
+                            class="rounded-md bg-black p-4  text-sm font-semibold text-white  hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black border">
+                            View Docs
+                        </button>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+            <div class="rounded-lg">
+                <!-- <img class="aspect-[3/2] w-full rounded-lg  object-cover lg:aspect-auto lg:h-[400px]"
+                    src="/AI-1-1.jpg"
+                    alt="" /> -->
+                <video class="aspect-[3/2] w-full rounded-lg  object-cover lg:aspect-auto lg:h-[550px]" autoplay loop
+                    src="/src/assets/hero-video.mp4"></video>
+            </div>
+        </div>
+    </div>
+
+    <!-- First Section End -->
+
+
+
+    <!-- Second Section Start -->
+
+
+    <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 ">
+        <div class="box2 mx-auto max-w-xl text-center" style="--clr:rgba(143, 36, 172, 0.3);--i:1;">
+            <!-- <div class="mx-auto inline-flex rounded-full bg-gray-100 px-4 py-1.5">
+            <p class="text-xs font-semibold uppercase tracking-widest text-white">
+              100+ Tailwind Components
+            </p>
+          </div> -->
+            <h2 class="mt-10 text-2xl  leading-tight text-white sm:text-4xl lg:text-4xl" data-aos="fade-up"
+                data-aos-duration="1000">
+                AI helps you build beautiful website
+            </h2>
+            <p class="mt-4 text-base leading-relaxed text-gray-200" data-aos="fade-up" data-aos-duration="1000">
+                Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
+                Velit officia consequat duis enim velit mollit.
+            </p>
+        </div>
+        <div class=" mt-8 grid  grid-cols-1 gap-8 md:grid-cols-2 xl:mt-12 xl:grid-cols-2 xl:gap-6">
+            <div class="relative  overflow-hidden space-y-3 p-0.5  rounded-lg " data-aos="zoom-in"
+                data-aos-duration="1000">
+                <div class="  flex h-full w-full items-center justify-center dark:bg-gray-800 back rounded-lg p-7">
+                    <p class="text-sm text-gray-500 z-10">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="relative  overflow-hidden space-y-3 p-0.5  rounded-lg " data-aos="zoom-in"
+            data-aos-duration="1000">
+            <div class="  flex h-full w-full items-center justify-center dark:bg-gray-800 back rounded-lg p-7">
+                <p class="text-sm text-gray-500 z-10">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+            </div>
+        </div>
+
+
+            <div class="relative  overflow-hidden space-y-3 p-0.5  rounded-lg " data-aos="zoom-in"
+            data-aos-duration="1000">
+            <div class="  flex h-full w-full items-center justify-center dark:bg-gray-800 back rounded-lg p-7">
+                <p class="text-sm text-gray-500 z-10">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+            </div>
+        </div>
+        <div class="relative  overflow-hidden space-y-3 p-0.5  rounded-lg " data-aos="zoom-in"
+        data-aos-duration="1000">
+        <div class="  flex h-full w-full items-center justify-center dark:bg-gray-800 back rounded-lg p-7">
+            <p class="text-sm text-gray-500 z-10">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </p>
+        </div>
+    </div>
+
+    <div class="relative  overflow-hidden space-y-3 p-0.5  rounded-lg " data-aos="zoom-in"
+            data-aos-duration="1000">
+            <div class="  flex h-full w-full items-center justify-center dark:bg-gray-800 back rounded-lg p-7">
+                <p class="text-sm text-gray-500 z-10">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+            </div>
+        </div>
+
+        <div class="relative  overflow-hidden space-y-3 p-0.5  rounded-lg " data-aos="zoom-in"
+        data-aos-duration="1000">
+        <div class="  flex h-full w-full items-center justify-center dark:bg-gray-800 back rounded-lg p-7">
+            <p class="text-sm text-gray-500 z-10">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+
+            </p>
+        </div>
+    </div>
+
+
+
+        </div>
+
+        <!-- <div class="rounded-lg">
+            <img class="aspect-[3/2] mt-10 w-full rounded-lg bg-gray-900 object-cover lg:aspect-auto lg:h-[300px]"
+                src="" alt="" />
+        </div> -->
+
+    </div>
+
+
+    </div>
+
+    <!-- Second Section End -->
+
+
+    <!-- Third Section Start -->
+
+    <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 ">
+        <div class="box2 mx-auto max-w-xl text-center" style="--clr:rgba(70, 26, 128, 0.3);--i:1;">
+            <!-- <div class="mx-auto inline-flex rounded-full bg-gray-100 px-4 py-1.5">
+            <p class="text-xs font-semibold uppercase tracking-widest text-white">
+              100+ Tailwind Components
+            </p>
+          </div> -->
+            <h2 class="mt-10 text-2xl  leading-tight text-white sm:text-4xl lg:text-4xl" data-aos="fade-up"
+                data-aos-duration="1000">
+                AI helps you build beautiful website
+            </h2>
+            <p class="mt-4 text-base leading-relaxed text-gray-200" data-aos="fade-up" data-aos-duration="1000">
+                Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
+                Velit officia consequat duis enim velit mollit.
+            </p>
+        </div>
+        <div class=" mt-8 grid  grid-cols-2 gap-8 md:grid-cols-4 xl:mt-12 xl:grid-cols-4 xl:gap-6">
+            <div class="relative  overflow-hidden space-y-3 p-0.5  rounded-lg " data-aos="zoom-in"
+                data-aos-duration="1000">
+                <div class="box-color  flex h-full w-full items-center justify-center dark:bg-gray-800 back rounded-lg p-7">
+                    <p class="text-sm text-gray-500 z-10">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="relative  overflow-hidden space-y-3 p-0.5  rounded-lg " data-aos="zoom-in"
+            data-aos-duration="1000">
+            <div class="box-color  flex h-full w-full items-center justify-center dark:bg-gray-800 back rounded-lg p-7">
+                <p class="text-sm text-gray-500 z-10">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+            </div>
+        </div>
+
+
+            <div class="relative  overflow-hidden space-y-3 p-0.5  rounded-lg " data-aos="zoom-in"
+            data-aos-duration="1000">
+            <div class="box-color  flex h-full w-full items-center justify-center dark:bg-gray-800 back rounded-lg p-7">
+                <p class="text-sm text-gray-500 z-10">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+            </div>
+        </div>
+
+
+        <div class="relative  overflow-hidden space-y-3 p-0.5  rounded-lg " data-aos="zoom-in"
+        data-aos-duration="1000">
+        <div class="box-color  flex h-full w-full items-center justify-center dark:bg-gray-800 back rounded-lg p-7">
+            <p class="text-sm text-gray-500 z-10">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </p>
+        </div>
+    </div>
+
+
+
+        </div>
+
+        <!-- <div class="rounded-lg">
+            <img class="aspect-[3/2] mt-10 w-full rounded-lg bg-gray-900 object-cover lg:aspect-auto lg:h-[300px]"
+                src="" alt="" />
+        </div> -->
+
+    </div>
+
+
+    <!-- Third Section End -->
+
+
+    <!-- Fourth Section Start -->
+
+    <div class=" relative w-full">
+        <div class="box mx-auto max-w-7xl lg:px-8">
+            <div class="flex flex-col justify-center px-4 py-10 lg:px-6">
+                <div class="text-center mt-10">
+                    <h1 class="text-2xl  tracking-tight text-white lg:text-5xl" data-aos="fade-up"
+                        data-aos-duration="1000">
+                        Lorem ipsum dolor sit <br /> amet consectetur dicta.
+                    </h1>
+                    <p class="mt-6 text-lg leading-8 text-white" data-aos="fade-up" data-aos-duration="1000">
+                        Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem
+                        cupidatat commodo. <br /> Elit sunt amet fugiat veniam occaecat fugiat
+                        aliqua.
+                    </p>
+                    <div class="mt-10 flex items-center justify-center gap-x-2">
+                        <button type="button" data-aos="fade-up" data-aos-duration="2000"
+                            class="rounded-md bg-black p-4  text-sm font-semibold text-white  hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black border">
+                            View Docs
+                        </button>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="rounded-lg">
+                <!-- <img class="aspect-[3/2] w-full rounded-lg bg-gray-50 object-cover lg:aspect-auto lg:h-[300px]"
+                    src="/vector-wave-lines-flowing-dynamic-260nw-1316809226.jpg" alt="" /> -->
+                <video class="aspect-[3/2] w-full rounded-lg bg-gray-50 object-cover lg:aspect-auto lg:h-[400px]"
+                    autoplay loop src="/src/assets/original-9e87c5efa9475fdc0cc2ec4e46fa8575.mp4"></video>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Fourth Section End -->
+
+
+
+    <!-- five Section Start -->
+
+    <section class="relative">
+        <div class="text-box text-center mt-10" style="--clr:rgba(168, 25, 151, 0.3);--i:1;">
+            <h1 class="text-2xl tracking-tight text-white lg:text-5xl" data-aos="fade-up" data-aos-duration="1000">
+                Lorem ipsum dolor sit amet <br /> consectetur dicta.
+            </h1>
+            <p class="mt-6 text-lg leading-8 text-white" data-aos="fade-up" data-aos-duration="1000">
+                Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem
+                cupidatat commodo. <br /> Elit sunt amet fugiat veniam occaecat fugiat
+                aliqua.
+            </p>
+
+        </div>
+        <div class="px-10 lg:px-20 my-20 lg:flex lg:flex-row lg:items-center">
+
+            <div class="w-full lg:w-1/2" data-aos="zoom-in" data-aos-duration="2000">
+                <img src="/src/assets/myaichatbotscreen_laptop-removebg-preview.png" alt="ManWith Laptop"
+                    class="h-full w-full rounded-md object-cover" />
+
+
+            </div>
+
+            <div class="w-full lg:w-1/2">
+                <div class="my-10 lg:my-0 lg:pl-10">
+                    <h2 class="text-3xl leading-tight text-white sm:text-3xl lg:text-3xl" data-aos="fade-up"
+                        data-aos-duration="1000">
+                        Imagine, unlimited sales presentations daily - 24/7
+                    </h2>
+                    <p class="mt-4 max-w-xl text-base leading-relaxed text-gray-200" data-aos="fade-up"
+                        data-aos-duration="1000">
+                        1. &nbsp; AIRPEC-powered remote digital sales calls
+                    </p>
+                    <p class="mt-4 max-w-xl text-base leading-relaxed text-gray-200" data-aos="fade-up"
+                        data-aos-duration="1000">
+                        2. &nbsp; Hosted content on learning buckets
+                    </p>
+                    <p class="mt-4 max-w-xl text-base leading-relaxed text-gray-200" data-aos="fade-up"
+                        data-aos-duration="1000">
+                        3. &nbsp; Custom voice-activated training buckets
+                    </p>
+                    <p class="mt-4 max-w-xl text-base leading-relaxed text-gray-200" data-aos="fade-up"
+                        data-aos-duration="1000">
+                        4. &nbsp; Train your AI to sell the way you want
+                    </p>
+                    <p class="mt-4 max-w-xl text-base leading-relaxed text-gray-200" data-aos="fade-up"
+                        data-aos-duration="1000">
+                        5. &nbsp; Deliver only qualified closing leads to your sales team
+                    </p>
+                    <p class="mt-4 max-w-xl text-base leading-relaxed text-gray-200" data-aos="fade-up"
+                        data-aos-duration="1000">
+                        6. &nbsp; Activate unparalleled website conversion & performance
+                    </p>
+
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="px-10 lg:px-20 my-20 lg:flex lg:flex-row lg:items-center" >
+
+
+            <div class="w-full lg:w-1/2">
+                <div class="my-10 lg:my-0 lg:pl-10">
+                    <h2 class="text-3xl leading-tight text-white sm:text-3xl lg:text-3xl" data-aos="fade-up"
+                        data-aos-duration="1000">
+                        Unlimited daily sales appointments, 24/7 by email
+                    </h2>
+                    <p class="mt-4 max-w-xl text-base leading-relaxed text-gray-200" data-aos="fade-up"
+                        data-aos-duration="1000">
+                        1. &nbsp; Guide customers to buying decisions
+                    </p>
+                    <p class="mt-4 max-w-xl text-base leading-relaxed text-gray-200" data-aos="fade-up"
+                        data-aos-duration="1000">
+                        2. &nbsp; Improves sales productivity
+                    </p>
+                    <p class="mt-4 max-w-xl text-base leading-relaxed text-gray-200" data-aos="fade-up"
+                        data-aos-duration="1000">
+                        3. &nbsp; Puts revenue growth on autopilot
+                    </p>
+                    <p class="mt-4 max-w-xl text-base leading-relaxed text-gray-200" data-aos="fade-up"
+                        data-aos-duration="1000">
+                        4. &nbsp; Sales team retention is optimized
+                    </p>
+                    <p class="mt-4 max-w-xl text-base leading-relaxed text-gray-200" data-aos="fade-up"
+                        data-aos-duration="1000">
+                        5. &nbsp; Reduce costs of customer acquisition
+                    </p>
+                    <p class="mt-4 max-w-xl text-base leading-relaxed text-gray-200" data-aos="fade-up"
+                        data-aos-duration="1000">
+                        6. &nbsp; Reschedule appointments
+                    </p>
+                    <p class="mt-4 max-w-xl text-base leading-relaxed text-gray-200" data-aos="fade-up"
+                        data-aos-duration="1000">
+                        7. &nbsp; Automated notification and revisit of rescheduled appointments.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="w-full lg:w-1/2" data-aos="zoom-in" data-aos-duration="2000">
+                <img src="/src/assets/email_campaign_presentation-removebg-preview.png" alt="ManWith Laptop"
+                    class="h-full w-full rounded-md object-cover" />
+
+
+
+            </div>
+
+
+
+        </div>
+
+
+        <div class=" px-10 lg:px-20 my-20 lg:flex lg:flex-row lg:items-center" >
+
+            <div class="w-full lg:w-1/2" data-aos="zoom-in" data-aos-duration="2000">
+                <img src="/src/assets/Human-AI_Sales_presentation-removebg-preview.png" alt="ManWith Laptop"
+                    class="h-full w-full rounded-md object-cover" />
+
+
+            </div>
+
+            <div class="w-full lg:w-1/2">
+                <div class="my-10 lg:my-0 lg:pl-10">
+                    <h2 class="text-3xl leading-tight text-white sm:text-3xl lg:text-3xl" data-aos="fade-up"
+                        data-aos-duration="1000">
+                        Imagine, unlimited sales presentations daily - 24/7
+                    </h2>
+                    <p class="mt-4 max-w-xl text-base leading-relaxed text-gray-200" data-aos="fade-up"
+                        data-aos-duration="1000">
+                        1. &nbsp; AIRPEC-powered remote digital sales calls
+                    </p>
+                    <p class="mt-4 max-w-xl text-base leading-relaxed text-gray-200" data-aos="fade-up"
+                        data-aos-duration="1000">
+                        2. &nbsp; Hosted content on learning buckets
+                    </p>
+                    <p class="mt-4 max-w-xl text-base leading-relaxed text-gray-200" data-aos="fade-up"
+                        data-aos-duration="1000">
+                        3. &nbsp; Custom voice-activated training buckets
+                    </p>
+                    <p class="mt-4 max-w-xl text-base leading-relaxed text-gray-200" data-aos="fade-up"
+                        data-aos-duration="1000">
+                        4. &nbsp; Train your AI to sell the way you want
+                    </p>
+                    <p class="mt-4 max-w-xl text-base leading-relaxed text-gray-200" data-aos="fade-up"
+                        data-aos-duration="1000">
+                        5. &nbsp; Deliver only qualified closing leads to your sales team
+                    </p>
+                    <p class="mt-4 max-w-xl text-base leading-relaxed text-gray-200" data-aos="fade-up"
+                        data-aos-duration="1000">
+                        6. &nbsp; Activate unparalleled website conversion & performance
+                    </p>
+
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Five Section End -->
+
+    <!-- six section start -->
+    <section class="">
+        <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+            <div class="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
+                <h2 class="mb-4 text-4xl tracking-tight text-gray-900 dark:text-white" data-aos="fade-up"
+                    data-aos-duration="1000">Designed for business teams like yours</h2>
+                <p class="mb-5 font-light text-gray-500 sm:text-xl dark:text-gray-400" data-aos="fade-up"
+                    data-aos-duration="1000">Here at Flowbite we focus on markets where technology, innovation, and
+                    capital can unlock long-term value and drive economic growth.</p>
+            </div>
+            <div class="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0">
+                <!-- Pricing Card -->
+                <div class="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white"
+                    data-aos="zoom-in" data-aos-duration="2000">
+                    <h3 class="mb-4 text-2xl font-semibold">Starter</h3>
+                    <p class="font-light text-gray-500 sm:text-lg dark:text-gray-400">Best option for personal use & for
+                        your next project.</p>
+                    <div class="flex justify-center items-baseline my-8">
+                        <span class="mr-2 text-5xl font-extrabold">$29</span>
+                        <span class="text-gray-500 dark:text-gray-400">/month</span>
+                    </div>
+                    <!-- List -->
+                    <ul role="list" class="mb-8 space-y-4 text-left">
+                        <li class="flex items-center space-x-3">
+                            <!-- Icon -->
+                            <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Individual configuration</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <!-- Icon -->
+                            <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span>No setup, or hidden fees</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <!-- Icon -->
+                            <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Team size: <span class="font-semibold">1 developer</span></span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <!-- Icon -->
+                            <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Premium support: <span class="font-semibold">6 months</span></span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <!-- Icon -->
+                            <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Free updates: <span class="font-semibold">6 months</span></span>
+                        </li>
+                    </ul>
+                    <a href="#"
+                        class="text-white bg-blue-700 hover:bg-blue-600 focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-primary-900">Get
+                        started</a>
+                </div>
+                <!-- Pricing Card -->
+                <div class="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white"
+                    data-aos="zoom-in" data-aos-duration="2000">
+                    <h3 class="mb-4 text-2xl font-semibold">Company</h3>
+                    <p class="font-light text-gray-500 sm:text-lg dark:text-gray-400">Relevant for multiple users,
+                        extended & premium support.</p>
+                    <div class="flex justify-center items-baseline my-8">
+                        <span class="mr-2 text-5xl font-extrabold">$99</span>
+                        <span class="text-gray-500 dark:text-gray-400">/month</span>
+                    </div>
+                    <!-- List -->
+                    <ul role="list" class="mb-8 space-y-4 text-left">
+                        <li class="flex items-center space-x-3">
+                            <!-- Icon -->
+                            <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Individual configuration</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <!-- Icon -->
+                            <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span>No setup, or hidden fees</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <!-- Icon -->
+                            <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Team size: <span class="font-semibold">10 developers</span></span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <!-- Icon -->
+                            <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Premium support: <span class="font-semibold">24 months</span></span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <!-- Icon -->
+                            <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Free updates: <span class="font-semibold">24 months</span></span>
+                        </li>
+                    </ul>
+                    <a href="#"
+                        class="text-white bg-blue-700 hover:bg-blue-600 focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-primary-900">Get
+                        started</a>
+                </div>
+                <!-- Pricing Card -->
+                <div class="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white"
+                    data-aos="zoom-in" data-aos-duration="2000">
+                    <h3 class="mb-4 text-2xl font-semibold">Enterprise</h3>
+                    <p class="font-light text-gray-500 sm:text-lg dark:text-gray-400">Best for large scale uses and
+                        extended redistribution rights.</p>
+                    <div class="flex justify-center items-baseline my-8">
+                        <span class="mr-2 text-5xl font-extrabold">$499</span>
+                        <span class="text-gray-500 dark:text-gray-400">/month</span>
+                    </div>
+                    <!-- List -->
+                    <ul role="list" class="mb-8 space-y-4 text-left">
+                        <li class="flex items-center space-x-3">
+                            <!-- Icon -->
+                            <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Individual configuration</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <!-- Icon -->
+                            <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span>No setup, or hidden fees</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <!-- Icon -->
+                            <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Team size: <span class="font-semibold">100+ developers</span></span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <!-- Icon -->
+                            <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Premium support: <span class="font-semibold">36 months</span></span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <!-- Icon -->
+                            <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Free updates: <span class="font-semibold">36 months</span></span>
+                        </li>
+                    </ul>
+                    <a href="#"
+                        class="text-white bg-blue-700 hover:bg-blue-600 focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-primary-900">Get
+                        started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- six section end -->
+
+    <!-- seven Section Start -->
+    <footer class="w-full">
+        <div class="mx-auto max-w-7xl p-5">
+            <!--Grid-->
+            <div class="grid grid-cols-2 lg:grid-cols-4 2xl:grid-cols-6 gap-8 py-10  relative">
+                <div class="box-bottom col-span-full mx-10 lg:mx-10 border p-5 lg:p-10 mb-10 2xl:col-span-2 lg:mb-0 flex items-center flex-col 2xl:items-start "
+                    style="--clr:rgb(238, 35, 214, 0.2);--i:1; background-color: #1F2937;">
+                   
+                    <div
+                        class="flex items-center justify-between w-full max-w-xl mx-auto flex-col  2xl:flex-col 2xl:items-start">
+                        <p class="py-8 text-xl text-gray-300 lg:max-w-xs text-center lg:text-center">Trusted in more
+                            than
+                            100 countries & 5 million customers. Have any query ?</p>
+                        <a href="javascript:;"
+                            class="py-2.5 px-5 h-9 block w-fit bg-indigo-900 rounded-full shadow-sm text-xs text-white mx-auto transition-all  duration-500 hover:bg-indigo-700 lg:mx-0">
+                            Contact us </a>
+                    </div>
+                </div>
+                <!--End Col-->
+                
+                <!--End Col-->
+                <div class="lg:mx-auto text-left">
+                    <!-- <h4 class="text-lg text-gray-300 font-medium mb-7">Products</h4> -->
+                    <img class="h-[50px]" src="/src/assets/Artboard 4.png" alt="">
+
+                    <!-- <ul class="text-sm  transition-all duration-500">
+                        <li class="mb-6">
+                            <a href="javascript:;" class="text-gray-200 hover:text-indigo-300">Figma UI System</a>
+                        </li>
+                        <li class="mb-6">
+                            <a href="javascript:;" class=" text-gray-200 hover:text-indigo-300">Icons Assets</a>
+                        </li>
+                        <li class="mb-6">
+                            <a href="javascript:;" class=" text-gray-200 hover:text-indigo-300">Responsive Blocks</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;" class=" text-gray-200 hover:text-indigo-300">Components Library</a>
+                        </li>
+                    </ul> -->
+                </div>
+
+
+                <!--End Col-->
+                <div class="lg:mx-auto text-left">
+                    <h4 class="text-lg text-gray-300 font-medium mb-7">Products</h4>
+                    <ul class="text-sm  transition-all duration-500">
+                        <li class="mb-6">
+                            <a href="javascript:;" class="text-gray-200 hover:text-indigo-300">Figma UI System</a>
+                        </li>
+                        <li class="mb-6">
+                            <a href="javascript:;" class=" text-gray-200 hover:text-indigo-300">Icons Assets</a>
+                        </li>
+                        <li class="mb-6">
+                            <a href="javascript:;" class=" text-gray-200 hover:text-indigo-300">Responsive Blocks</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;" class=" text-gray-200 hover:text-indigo-300">Components Library</a>
+                        </li>
+                    </ul>
+                </div>
+
+
+                 <!--End Col-->
+                 <div class="lg:mx-auto text-left">
+                    <h4 class="text-lg text-gray-300 font-medium mb-7">Products</h4>
+                    <ul class="text-sm  transition-all duration-500">
+                        <li class="mb-6">
+                            <a href="javascript:;" class="text-gray-200 hover:text-indigo-300">Figma UI System</a>
+                        </li>
+                        <li class="mb-6">
+                            <a href="javascript:;" class=" text-gray-200 hover:text-indigo-300">Icons Assets</a>
+                        </li>
+                        <li class="mb-6">
+                            <a href="javascript:;" class=" text-gray-200 hover:text-indigo-300">Responsive Blocks</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;" class=" text-gray-200 hover:text-indigo-300">Components Library</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!--End Col-->
+                <div class="lg:mx-auto text-left ">
+                    <h4 class="text-lg text-gray-300 font-medium mb-7">Address</h4>
+                    <ul class="text-sm  transition-all duration-500 ">
+                        <li class="mb-6">
+                            <a  class="text-gray-200  text-lg">1445, Woodmont, Lane, NW
+                                
+                                Ste 620
+                                
+                                Atlanta, GA 30318
+                               
+                                info@myairobotics.com</a>
+                        </li>
+                        <!-- <li class="mb-6">
+                            <a href="javascript:;" class="text-gray-200 hover:text-indigo-300">Ste 620</a>
+                        </li> -->
+
+                    </ul>
+                </div>
+                <!--End Col-->
+                <!-- <div class="lg:mx-auto text-left">
+                    <h4 class="text-lg text-gray-300 font-medium mb-7">Blogs</h4>
+                    <ul class="text-sm  transition-all duration-500">
+                        <li class="mb-6">
+                            <a href="javascript:;" class="text-gray-200 hover:text-indigo-300">News</a>
+                        </li>
+                        <li class="mb-6">
+                            <a href="javascript:;" class=" text-gray-200 hover:text-indigo-300">Tips & Tricks</a>
+                        </li>
+                        <li class="mb-6">
+                            <a href="javascript:;" class=" text-gray-200 hover:text-indigo-300">New Updates</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;" class=" text-gray-200 hover:text-indigo-300">Events</a>
+                        </li>
+                    </ul>
+                </div> -->
+            </div>
+            <!--Grid-->
+            <div class="py-7 px-5 border-t border-gray-200">
+                <div class="flex items-center justify-center flex-col lg:justify-between lg:flex-row">
+                    <span class="text-sm text-gray-500 ">©<a href="https://pagedone.io/">AI Chat Boat</a> 2024, All
+                        rights
+                        reserved.</span>
+                    <div class="flex mt-4 space-x-4 sm:justify-center lg:mt-0 ">
+                        <a href="https://x.com/MYai_Robotics"
+                            class="w-9 h-9 rounded-full bg-gray-700 flex justify-center items-center hover:bg-indigo-600">
+                            <svg class=" text-white" width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path id="Vector"
+                                    d="M17.5667 14.7386L24.072 7.33936H22.5305L16.8819 13.764L12.3704 7.33936H7.16699L13.9892 17.0546L7.16699 24.8139H8.70862L14.6736 18.0292L19.4381 24.8139H24.6415L17.5663 14.7386H17.5667ZM15.4552 17.1402L14.764 16.1728L9.2641 8.47491H11.632L16.0704 14.6873L16.7617 15.6548L22.5312 23.73H20.1633L15.4552 17.1406V17.1402Z"
+                                    fill="currentColor" />
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/myairobotics/"
+                            class="w-9 h-9 rounded-full bg-gray-700 flex justify-center items-center hover:bg-indigo-600">
+                            <svg class="w-[1.25rem] h-[1.125rem] text-white" viewBox="0 0 15 15" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M4.70975 7.93663C4.70975 6.65824 5.76102 5.62163 7.0582 5.62163C8.35537 5.62163 9.40721 6.65824 9.40721 7.93663C9.40721 9.21502 8.35537 10.2516 7.0582 10.2516C5.76102 10.2516 4.70975 9.21502 4.70975 7.93663ZM3.43991 7.93663C3.43991 9.90608 5.05982 11.5025 7.0582 11.5025C9.05658 11.5025 10.6765 9.90608 10.6765 7.93663C10.6765 5.96719 9.05658 4.37074 7.0582 4.37074C5.05982 4.37074 3.43991 5.96719 3.43991 7.93663ZM9.97414 4.22935C9.97408 4.39417 10.0236 4.55531 10.1165 4.69239C10.2093 4.82946 10.3413 4.93633 10.4958 4.99946C10.6503 5.06259 10.8203 5.07916 10.9844 5.04707C11.1484 5.01498 11.2991 4.93568 11.4174 4.81918C11.5357 4.70268 11.6163 4.55423 11.649 4.39259C11.6817 4.23095 11.665 4.06339 11.6011 3.91109C11.5371 3.7588 11.4288 3.6286 11.2898 3.53698C11.1508 3.44536 10.9873 3.39642 10.8201 3.39635H10.8197C10.5955 3.39646 10.3806 3.48424 10.222 3.64043C10.0635 3.79661 9.97434 4.00843 9.97414 4.22935ZM4.21142 13.5892C3.52442 13.5584 3.15101 13.4456 2.90286 13.3504C2.57387 13.2241 2.33914 13.0738 2.09235 12.8309C1.84555 12.588 1.69278 12.3569 1.56527 12.0327C1.46854 11.7882 1.3541 11.4201 1.32287 10.7431C1.28871 10.0111 1.28189 9.79119 1.28189 7.93669C1.28189 6.08219 1.28927 5.86291 1.32287 5.1303C1.35416 4.45324 1.46944 4.08585 1.56527 3.84069C1.69335 3.51647 1.84589 3.28513 2.09235 3.04191C2.3388 2.79869 2.57331 2.64813 2.90286 2.52247C3.1509 2.42713 3.52442 2.31435 4.21142 2.28358C4.95417 2.24991 5.17729 2.24319 7.0582 2.24319C8.9391 2.24319 9.16244 2.25047 9.90582 2.28358C10.5928 2.31441 10.9656 2.42802 11.2144 2.52247C11.5434 2.64813 11.7781 2.79902 12.0249 3.04191C12.2717 3.2848 12.4239 3.51647 12.552 3.84069C12.6487 4.08513 12.7631 4.45324 12.7944 5.1303C12.8285 5.86291 12.8354 6.08219 12.8354 7.93669C12.8354 9.79119 12.8285 10.0105 12.7944 10.7431C12.7631 11.4201 12.6481 11.7881 12.552 12.0327C12.4239 12.3569 12.2714 12.5882 12.0249 12.8309C11.7784 13.0736 11.5434 13.2241 11.2144 13.3504C10.9663 13.4457 10.5928 13.5585 9.90582 13.5892C9.16306 13.6229 8.93994 13.6296 7.0582 13.6296C5.17645 13.6296 4.95395 13.6229 4.21142 13.5892ZM4.15307 1.03424C3.40294 1.06791 2.89035 1.18513 2.4427 1.3568C1.9791 1.53408 1.58663 1.77191 1.19446 2.1578C0.802277 2.54369 0.56157 2.93108 0.381687 3.38797C0.207498 3.82941 0.0885535 4.3343 0.0543922 5.07358C0.0196672 5.81402 0.0117188 6.05074 0.0117188 7.93663C0.0117188 9.82252 0.0196672 10.0592 0.0543922 10.7997C0.0885535 11.539 0.207498 12.0439 0.381687 12.4853C0.56157 12.9419 0.802334 13.3297 1.19446 13.7155C1.58658 14.1012 1.9791 14.3387 2.4427 14.5165C2.89119 14.6881 3.40294 14.8054 4.15307 14.839C4.90479 14.8727 5.1446 14.8811 7.0582 14.8811C8.9718 14.8811 9.212 14.8732 9.96332 14.839C10.7135 14.8054 11.2258 14.6881 11.6737 14.5165C12.137 14.3387 12.5298 14.1014 12.9219 13.7155C13.3141 13.3296 13.5543 12.9419 13.7347 12.4853C13.9089 12.0439 14.0284 11.539 14.062 10.7997C14.0962 10.0587 14.1041 9.82252 14.1041 7.93663C14.1041 6.05074 14.0962 5.81402 14.062 5.07358C14.0278 4.33424 13.9089 3.82913 13.7347 3.38797C13.5543 2.93135 13.3135 2.5443 12.9219 2.1578C12.5304 1.7713 12.137 1.53408 11.6743 1.3568C11.2258 1.18513 10.7135 1.06735 9.96388 1.03424C9.21256 1.00058 8.97236 0.992188 7.05876 0.992188C5.14516 0.992188 4.90479 1.00002 4.15307 1.03424Z"
+                                    fill="currentColor" />
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/company/myai-robotics"
+                            class="w-9 h-9 rounded-full bg-gray-700 flex justify-center items-center hover:bg-indigo-600">
+                            <svg class="w-[1rem] h-[1rem] text-white" viewBox="0 0 13 12" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M2.8794 11.5527V3.86835H0.318893V11.5527H2.87967H2.8794ZM1.59968 2.81936C2.4924 2.81936 3.04817 2.2293 3.04817 1.49188C3.03146 0.737661 2.4924 0.164062 1.61666 0.164062C0.74032 0.164062 0.167969 0.737661 0.167969 1.49181C0.167969 2.22923 0.723543 2.8193 1.5829 2.8193H1.59948L1.59968 2.81936ZM4.29668 11.5527H6.85698V7.26187C6.85698 7.03251 6.87369 6.80255 6.94134 6.63873C7.12635 6.17968 7.54764 5.70449 8.25514 5.70449C9.18141 5.70449 9.55217 6.4091 9.55217 7.44222V11.5527H12.1124V7.14672C12.1124 4.78652 10.8494 3.68819 9.16483 3.68819C7.78372 3.68819 7.17715 4.45822 6.84014 4.98267H6.85718V3.86862H4.29681C4.33023 4.5895 4.29661 11.553 4.29661 11.553L4.29668 11.5527Z"
+                                    fill="currentColor" />
+                            </svg>
+                        </a>
+                        <!-- <a href="javascript:;"
+                            class="w-9 h-9 rounded-full bg-gray-700 flex justify-center items-center hover:bg-indigo-600">
+                            <svg class="w-[1.25rem] h-[0.875rem] text-white" viewBox="0 0 16 12" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M13.9346 1.13529C14.5684 1.30645 15.0665 1.80588 15.2349 2.43896C15.5413 3.58788 15.5413 5.98654 15.5413 5.98654C15.5413 5.98654 15.5413 8.3852 15.2349 9.53412C15.0642 10.1695 14.5661 10.669 13.9346 10.8378C12.7886 11.1449 8.19058 11.1449 8.19058 11.1449C8.19058 11.1449 3.59491 11.1449 2.44657 10.8378C1.81277 10.6666 1.31461 10.1672 1.14622 9.53412C0.839844 8.3852 0.839844 5.98654 0.839844 5.98654C0.839844 5.98654 0.839844 3.58788 1.14622 2.43896C1.31695 1.80353 1.81511 1.30411 2.44657 1.13529C3.59491 0.828125 8.19058 0.828125 8.19058 0.828125C8.19058 0.828125 12.7886 0.828125 13.9346 1.13529ZM10.541 5.98654L6.72178 8.19762V3.77545L10.541 5.98654Z"
+                                    fill="currentColor" />
+                            </svg>
+                        </a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- seven Section End -->
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+</body>
+
+</html>
